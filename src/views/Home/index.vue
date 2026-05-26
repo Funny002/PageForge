@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>Home</div>
-    <n-button @click="handlerClick">to Editor</n-button>
+    <n-button @click="handleClick">to Editor</n-button>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
-function handlerClick() {
+function handleClick() {
   router.push('/editor');
 }
 </script>

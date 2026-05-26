@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>Editor</div>
-    <n-icon size="30rem">
+    <n-icon size="3rem">
       <AlbumsSharp />
     </n-icon>
   </div>
