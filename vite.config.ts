@@ -1,12 +1,24 @@
-import vue from "@vitejs/plugin-vue";
-import { defineConfig } from "vite";
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
+import Components from 'unplugin-vue-components/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import vue from '@vitejs/plugin-vue';
+// vite.config.ts
+import { defineConfig } from 'vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    AutoImport({
+      imports: ['vue', { 'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar'] }],
+    }),
+    Components({
+      resolvers: [NaiveUiResolver()],
+    }),
+  ],
   server: {
     open: true,
     port: 9130,
-    host: "0.0.0.0",
+    host: '0.0.0.0',
   },
 });
