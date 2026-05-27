@@ -8,11 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "common-store": "github:Funny002/CommonStore#v1",
-    "pinia": "^3.0.4",
-    "sass": "^1.100.0",
-    "vue": "^3.5.34",
-    "vue-router": "^4.6.4"
+    "common-store": "github:Funny002/CommonStore#v1"
   },
   "devDependencies": {
     "@types/node": "^24.12.3",
@@ -20,10 +16,13 @@
     "@vitejs/plugin-vue": "^6.0.6",
     "@vue/tsconfig": "^0.9.1",
     "naive-ui": "^2.44.1",
+    "pinia": "^3.0.4",
+    "sass": "^1.100.0",
     "typescript": "~6.0.2",
     "unplugin-auto-import": "^21.0.0",
     "unplugin-vue-components": "^32.1.0",
     "vite": "^8.0.12",
+    "vue": "^3.5.34",
     "vue-tsc": "^3.2.8"
   },
   "repository": {

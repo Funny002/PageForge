@@ -4,6 +4,10 @@ import AutoImport from 'unplugin-auto-import/vite';
 import vue from '@vitejs/plugin-vue';
 // vite.config.ts
 import { defineConfig } from 'vite';
+import { fileURLToPath } from 'url';
+import { resolve } from 'path';
+
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -17,8 +21,23 @@ export default defineConfig({
     }),
   ],
   server: {
-    open: true,
     port: 9130,
     host: '0.0.0.0',
+  },
+  build: {
+    lib: {
+      entry: resolve(__dirname, 'lib/index.ts'),
+      name: 'PageForest',
+      formats: ['es', 'cjs'],
+      fileName: (format) => `index.${format}.js`,
+    },
+    rollupOptions: {
+      external: ['immutable'],
+      output: {
+        globals: {
+          immutable: 'Immutable',
+        },
+      },
+    },
   },
 });
