@@ -1,0 +1,35 @@
+.pf-node-image {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  outline: 2px solid transparent;
+  outline-offset: 0;
+  transition: outline-color 0.15s;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  &:hover {
+    outline-color: var(--pf-accent);
+  }
+
+  &.pf-selected {
+    outline-color: var(--pf-accent);
+  }
+}
+
+.pf-image-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  min-height: 40px;
+  padding: 4px 12px;
+  color: var(--pf-text-tertiary);
+  background-color: var(--pf-bg-tertiary);
+  border: 1px dashed var(--pf-border);
+  border-radius: 4px;
+  font-size: 12px;
+}

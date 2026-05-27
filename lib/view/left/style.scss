@@ -1,0 +1,10 @@
+.pf-left {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+  transition: width 0.2s ease;
+  background-color: var(--pf-bg-secondary);
+  border-right: 1px solid var(--pf-border);
+}

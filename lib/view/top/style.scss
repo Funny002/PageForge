@@ -1,0 +1,86 @@
+.pf-top {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 12px;
+  background-color: var(--pf-bg-secondary);
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.pf-top-left {
+  display: flex;
+  align-items: center;
+}
+
+.pf-top-logo {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pf-text-primary);
+  letter-spacing: 0.5px;
+}
+
+.pf-top-center {
+  flex: 1;
+}
+
+.pf-top-right {
+  display: flex;
+  align-items: center;
+}
+
+.pf-canvas-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pf-canvas-preset {
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--pf-border);
+  border-radius: 4px;
+  background-color: var(--pf-bg-primary);
+  color: var(--pf-text-primary);
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    border-color: var(--pf-accent);
+  }
+}
+
+.pf-canvas-input {
+  width: 64px;
+  height: 28px;
+  padding: 0 6px;
+  border: 1px solid var(--pf-border);
+  border-radius: 4px;
+  background-color: var(--pf-bg-primary);
+  color: var(--pf-text-primary);
+  font-size: 12px;
+  text-align: center;
+  outline: none;
+
+  &:focus {
+    border-color: var(--pf-accent);
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.pf-canvas-sep {
+  font-size: 12px;
+  color: var(--pf-text-tertiary);
+  user-select: none;
+}
+
+.pf-canvas-unit {
+  font-size: 12px;
+  color: var(--pf-text-tertiary);
+  user-select: none;
+}

@@ -11,10 +11,14 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    exclude: ['common-store'],
+  },
   plugins: [
     vue(),
     AutoImport({
       imports: ['vue', { 'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar'] }],
+      exclude: [/CommonStore/],
     }),
     Components({
       resolvers: [NaiveUiResolver()],
@@ -32,7 +36,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: [],
+      external: ['vue', 'naive-ui', 'pinia', 'common-store', 'immutable'],
     },
   },
 });

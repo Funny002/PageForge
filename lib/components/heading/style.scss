@@ -1,0 +1,16 @@
+.pf-node-heading {
+  position: relative;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 0;
+  transition: outline-color 0.15s;
+  margin: 0;
+
+  &:hover {
+    outline-color: var(--pf-accent);
+  }
+
+  &.pf-selected {
+    outline-color: var(--pf-accent);
+  }
+}

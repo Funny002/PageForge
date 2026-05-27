@@ -1,0 +1,16 @@
+.pf-node-text {
+  cursor: pointer;
+  border-radius: 2px;
+  outline: 2px solid transparent;
+  outline-offset: 0;
+  transition: outline-color 0.15s, background-color 0.15s;
+
+  &:hover {
+    background-color: var(--pf-accent-hover);
+    background-color: color-mix(in srgb, var(--pf-accent) 15%, transparent);
+  }
+
+  &.pf-selected {
+    outline-color: var(--pf-accent);
+  }
+}
