@@ -10,5 +10,3 @@ export function applyTheme(el: HTMLElement, theme: ThemeConfig) {
 
 export { githubLight } from './github-light';
 export { githubDark } from './github-dark';
-export { atomLight } from './atom-light';
-export { atomDark } from './atom-dark';

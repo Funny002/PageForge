@@ -1,11 +1,9 @@
 import { Logger, History, Store } from 'common-store';
 import { registerActions } from './actions';
 import type { PageState } from './types';
-import { createNode } from '../utils';
 
 function createInitialState(): PageState {
   return {
-    page: createNode('div'),
     selectedNodeId: null,
     canvasHeight: 1080,
     canvasWidth: 1920,

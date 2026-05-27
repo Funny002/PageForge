@@ -10,5 +10,5 @@ PageForest.install = (app: App) => {
 export { PageForest };
 export default PageForest;
 
-export type { ThemeConfig } from './theme';
-export { applyTheme, githubLight, githubDark, atomLight, atomDark } from './theme';
+// 导出主题
+export { githubLight, githubDark } from './theme';
