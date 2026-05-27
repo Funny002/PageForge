@@ -2,6 +2,6 @@
   <div class="">PageForest</div>
 </template>
 
-<script lang="ts">
-export default { name: 'PageForest' };
+<script setup lang="ts">
+defineOptions({ name: 'PageForest' });
 </script>

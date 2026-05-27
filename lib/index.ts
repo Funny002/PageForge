@@ -1,15 +1,11 @@
 import pageForest from './view/index.vue';
 import type { App } from 'vue';
 
-export const PageForest = pageForest;
-
-PageForest.name = 'PageForest';
+const PageForest = pageForest as typeof pageForest & { install: (app: App) => void };
 
 PageForest.install = (app: App) => {
   app.component('PageForest', PageForest);
 };
 
-export default {
-  PageForest,
-  install: PageForest.install,
-};
+export { PageForest };
+export default PageForest;

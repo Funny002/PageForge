@@ -32,12 +32,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ['immutable'],
-      output: {
-        globals: {
-          immutable: 'Immutable',
-        },
-      },
+      external: [],
     },
   },
 });
