@@ -1,3 +1,5 @@
+export type ToolType = 'select' | 'hand' | 'move';
+
 export interface PageNode {
 }
 

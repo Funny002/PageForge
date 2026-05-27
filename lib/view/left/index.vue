@@ -7,4 +7,4 @@
 defineOptions({ name: 'PageForgeLeftPanel' });
 </script>
 
-<style lang="scss" src="./style.scss"></style>
+<style lang="scss" scoped src="./style.scss"></style>
