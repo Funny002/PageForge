@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "common-store": "github:Funny002/CommonStore#v1"
+    "common-store": "file:../CommonStore"
   },
   "devDependencies": {
     "@types/node": "^24.12.3",
