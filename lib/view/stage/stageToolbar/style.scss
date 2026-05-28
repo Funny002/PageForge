@@ -1,0 +1,117 @@
+.pf-stage-toolbar {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 4px;
+  border-radius: 6px;
+  background: var(--pf-bg-secondary);
+  border: 1px solid var(--pf-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  user-select: none;
+
+  &.is-dragging {
+    cursor: grabbing;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  }
+}
+
+.pf-toolbar-handle {
+  display: grid;
+  grid-template-columns: repeat(2, 4px);
+  grid-template-rows: repeat(3, 4px);
+  gap: 2px;
+  padding: 0 4px;
+  cursor: grab;
+}
+
+.pf-toolbar-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--pf-text-tertiary);
+}
+
+.pf-toolbar-sep {
+  width: 1px;
+  height: 20px;
+  margin: 0 4px;
+  background: var(--pf-border);
+}
+
+.pf-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.pf-toolbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--pf-text-secondary);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: var(--pf-bg-tertiary);
+    color: var(--pf-text-primary);
+  }
+
+  &.is-active {
+    background: var(--pf-accent);
+    color: #fff;
+  }
+}
+
+.pf-toolbar-zoom {
+  gap: 4px;
+}
+
+.pf-toolbar-zoom-btn {
+  width: 22px;
+  height: 22px;
+}
+
+.pf-toolbar-slider {
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--pf-bg-tertiary);
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+
+  &::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--pf-accent);
+    appearance: none;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  &::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--pf-accent);
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.pf-toolbar-zoom-label {
+  width: 38px;
+  font-size: 11px;
+  text-align: center;
+  color: var(--pf-text-secondary);
+  cursor: pointer;
+}

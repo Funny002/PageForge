@@ -5,7 +5,9 @@
       <PageForgeStageRuler direction="vertical" :scale="data.scale" :offset="data.offsetY" :start="data.start" />
       <PageForgeStageRuler direction="horizontal" :scale="data.scale" :offset="data.offsetX" :start="data.start" />
     </template>
+    <PageForgeStageToolbar :tool="data.tool" :scale="data.scale" @change="onToolbarChange" />
     <div class="pf-stage-content">
+      {{JSON.stringify(data)}}
       <slot />
     </div>
   </div>
@@ -16,14 +18,21 @@ defineOptions({ name: 'PageForgeStageCanvas' });
 
 import { reactive } from 'vue';
 import PageForgeStageRuler from '../stageRuler/index.vue';
+import PageForgeStageToolbar from '../stageToolbar/index.vue';
 
 const isRuler = true;
-const data = reactive({
+
+const data = reactive<Record<string, any>>({
   scale: 1,
   offsetX: 0,
   offsetY: 0,
   start: -100,
+  tool: 'select', // 'select' | 'hand' | 'move'
 });
+
+function onToolbarChange(type: 'tool' | 'scale', value: any) {
+  data[type] = value;
+}
 </script>
 
 <style lang="scss" scoped src="./style.scss"></style>
