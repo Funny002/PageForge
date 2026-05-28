@@ -31,6 +31,8 @@ const app = getCurrentInstance()?.appContext.app as App;
 const pageStore = createPageStore(app);
 provide(PAGE_STORE_KEY, pageStore);
 
+pageStore.actions.dispatch('canvas.resize', 800, 1080);
+
 interface Props {
   theme?: ThemeConfig;
 }

@@ -57,15 +57,15 @@ function draw() {
   ctx.scale(dpr, dpr);
 
   const styles = getComputedStyle(canvas);
-  const bgColor = styles.getPropertyValue('--pf-bg-secondary').trim() || '#f6f8fa';
-  const majorColor = styles.getPropertyValue('--pf-text-tertiary').trim() || '#8b949e';
-  const minorColor = styles.getPropertyValue('--pf-border').trim() || '#d0d7de';
+  const bgColor = styles.getPropertyValue('--pf-bg-secondary').trim();
+  const majorColor = styles.getPropertyValue('--pf-text-tertiary').trim();
+  const minorColor = styles.getPropertyValue('--pf-border').trim();
 
   ctx.fillStyle = bgColor;
   ctx.fillRect(0, 0, w, h);
 
   const { scale, offset, start, direction } = props;
-  if (!scale) return;
+  if (scale <= 0) return;
 
   const size = direction === 'horizontal' ? w : h;
   const startValue = start + (-offset) / scale;
@@ -104,10 +104,10 @@ function draw() {
         ctx.fillStyle = majorColor;
         if (direction === 'horizontal') {
           ctx.textBaseline = 'bottom';
-          ctx.fillText(label, pos + 3, h - 2);
+          ctx.fillText(label, pos + 3, h - 14);
         } else {
           ctx.save();
-          ctx.translate(w - 3, pos + 3);
+          ctx.translate(w - 14, pos + 3);
           ctx.rotate(-Math.PI / 2);
           ctx.textBaseline = 'bottom';
           ctx.fillText(label, 0, 0);
@@ -139,9 +139,6 @@ watch(
 onMounted(() => {
   const canvas = canvasRef.value;
   if (!canvas) return;
-
-  cw.value = canvas.clientWidth;
-  ch.value = canvas.clientHeight;
 
   resizeObserver = new ResizeObserver((entries) => {
     const rect = entries[0].contentRect;
