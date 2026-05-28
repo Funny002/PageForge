@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvasRef" class="pf-ruler pf-ruler-canvas" :class="`pf-ruler-${direction}`" />
+  <canvas ref="canvasRef" class="pf-stage-ruler" :class="`is-${direction}`" />
 </template>
 
 <script setup lang="ts">
@@ -156,4 +156,4 @@ onUnmounted(() => {
 });
 </script>
 
-<style lang="scss" scoped src="style.scss"></style>
+<style lang="scss" scoped src="./style.scss"></style>

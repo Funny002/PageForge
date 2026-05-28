@@ -1,8 +1,10 @@
 <template>
-  <div class="pf-stage-canvas">
-    <div class="pf-stage-corner" />
-    <PageForgeRuler direction="horizontal" :scale="data.scale" :offset="data.offsetX" :start="data.start" />
-    <PageForgeRuler direction="vertical" :scale="data.scale" :offset="data.offsetY" :start="data.start" />
+  <div class="pf-stage-canvas" :class="{'is-ruler': isRuler}">
+    <template v-if="isRuler">
+      <div class="pf-stage-ruler-corner" />
+      <PageForgeStageRuler direction="vertical" :scale="data.scale" :offset="data.offsetY" :start="data.start" />
+      <PageForgeStageRuler direction="horizontal" :scale="data.scale" :offset="data.offsetX" :start="data.start" />
+    </template>
     <div class="pf-stage-content">
       <slot />
     </div>
@@ -10,11 +12,12 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
-import PageForgeRuler from './ruler/index.vue';
-
 defineOptions({ name: 'PageForgeStageCanvas' });
 
+import { reactive } from 'vue';
+import PageForgeStageRuler from '../stageRuler/index.vue';
+
+const isRuler = true;
 const data = reactive({
   scale: 1,
   offsetX: 0,
