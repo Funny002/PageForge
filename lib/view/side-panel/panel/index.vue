@@ -1,20 +1,20 @@
 <template>
   <div class="fp-sidePanel_panel" :style="{width: sideWidth + 'px'}">
-    <div class="fp-sidePanel_panel-drag" @mousedown="onMouseDown"></div>
+    <div class="fp-sidePanel_panel-drag" @pointerdown="onPointerDown"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useMouseMove } from '../../../hooks';
+import { usePointerMove } from '../../../hooks';
 
 defineOptions({ name: 'side-panel' });
 
 const sideWidth = ref(210);
 
-const onMouseDown = (e: MouseEvent) => {
+const onPointerDown = (e: PointerEvent) => {
   const width = sideWidth.value;
-  useMouseMove((moveX: number) => {
-    sideWidth.value = Math.min(400, Math.max(width + moveX, 140));
+  usePointerMove((moveX) => {
+    sideWidth.value = Math.min(400, Math.max(Math.floor(width + moveX), 140));
   }, 10)(e);
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <pageForge @load="onHandleLoad" />
+  <pageForge :theme="darkVscode" @load="onHandleLoad" />
 </template>
 
 <script setup lang="ts">
@@ -7,7 +7,7 @@ import { VueDevtools } from 'common-store/vue-devtools';
 import type { Store } from 'common-store';
 import { getCurrentInstance } from 'vue';
 import { Logger } from 'common-store';
-import { pageForge } from '../../lib';
+import { pageForge, darkVscode } from '../../lib';
 import type { App } from 'vue';
 
 const app = getCurrentInstance()?.appContext.app as App;
