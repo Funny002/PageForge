@@ -6,12 +6,12 @@ export { createStore } from './store';
 
 export const STORE_KEY: InjectionKey<Store> = Symbol('pageStore');
 
-export function useStore(): Store {
+export function injectStore(): Store {
   return inject<Store>(STORE_KEY)!;
 }
 
-export function useStoreState<T>(path: string, fallback: T): Ref<T> {
-  const store = useStore();
+export function useStore<T>(path: string, fallback: T): Ref<T> {
+  const store = injectStore();
   const r = shallowRef<T>(store.getState(path) ?? fallback);
   const unsub = store.subscribe(path, (newVal) => {
     r.value = (newVal ?? fallback) as T;

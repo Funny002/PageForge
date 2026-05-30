@@ -1,5 +1,5 @@
 <template>
-  <div class="fp-sidePanel">
+  <div class="fp-sidePanel" :style="`--primary-color: ${themeVars.primaryColor}`">
     <side-menu :style="{background: themeVars.cardColor, borderRight: `1px solid ${themeVars.dividerColor}`}" />
     <side-panel :style="{background: themeVars.cardColor}" />
   </div>

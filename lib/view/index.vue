@@ -14,6 +14,7 @@
 import type { GlobalThemeOverrides } from 'naive-ui';
 import { createStore, STORE_KEY } from '../store';
 import { lightVscode } from '../theme';
+import { provide } from 'vue';
 
 import TopBar from './top-bar/index.vue';
 import StatusBar from './status-bar/index.vue';

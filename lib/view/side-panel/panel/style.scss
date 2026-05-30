@@ -1,0 +1,19 @@
+.fp-sidePanel_panel {
+  position: relative;
+}
+
+.fp-sidePanel_panel-drag {
+  top: 0;
+  right: -2px;
+  z-index: 100;
+  position: absolute;
+
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+
+  &:hover,
+  &:active {
+    background-color: var(--primary-color, #2080f0);
+  }
+}
