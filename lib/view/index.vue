@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import type { GlobalThemeOverrides } from 'naive-ui';
 import { createStore, STORE_KEY } from '../store';
-import { lightGithub } from '../theme';
+import { lightVscode } from '../theme';
 
 import TopBar from './top-bar/index.vue';
 import StatusBar from './status-bar/index.vue';
@@ -27,7 +27,7 @@ provide(STORE_KEY, pageStore);
 const props = withDefaults(defineProps<{
   theme?: GlobalThemeOverrides
 }>(), {
-  theme: () => lightGithub,
+  theme: () => lightVscode,
 });
 
 const emits = defineEmits<{

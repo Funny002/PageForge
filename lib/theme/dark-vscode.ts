@@ -1,0 +1,126 @@
+import type { GlobalThemeOverrides } from 'naive-ui';
+
+export const darkVscode: GlobalThemeOverrides = {
+  common: {
+    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamilyMono: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace',
+    fontWeight: '400',
+    fontWeightStrong: '600',
+    cubicBezierEaseInOut: 'cubic-bezier(.4, 0, .2, 1)',
+    cubicBezierEaseOut: 'cubic-bezier(0, 0, .2, 1)',
+    cubicBezierEaseIn: 'cubic-bezier(.4, 0, 1, 1)',
+    borderRadius: '6px',
+    borderRadiusSmall: '3px',
+    fontSize: '14px',
+    fontSizeMini: '11px',
+    fontSizeTiny: '12px',
+    fontSizeSmall: '13px',
+    fontSizeMedium: '14px',
+    fontSizeLarge: '16px',
+    fontSizeHuge: '18px',
+    lineHeight: '1.5',
+    heightMini: '20px',
+    heightTiny: '24px',
+    heightSmall: '28px',
+    heightMedium: '32px',
+    heightLarge: '40px',
+    heightHuge: '48px',
+
+    primaryColor: '#007acc',
+    primaryColorHover: '#1a8ad4',
+    primaryColorPressed: '#0069b4',
+    primaryColorSuppl: '#007acc',
+
+    infoColor: '#007acc',
+    infoColorHover: '#1a8ad4',
+    infoColorPressed: '#0069b4',
+    infoColorSuppl: '#007acc',
+
+    successColor: '#4ec9b0',
+    successColorHover: '#5fd4bd',
+    successColorPressed: '#3db89b',
+    successColorSuppl: '#4ec9b0',
+
+    warningColor: '#cca700',
+    warningColorHover: '#d9b610',
+    warningColorPressed: '#b89500',
+    warningColorSuppl: '#cca700',
+
+    errorColor: '#f44747',
+    errorColorHover: '#f76a6a',
+    errorColorPressed: '#d93a3a',
+    errorColorSuppl: '#f44747',
+
+    textColorBase: '#cccccc',
+    textColor1: '#cccccc',
+    textColor2: '#969696',
+    textColor3: '#6a6a6a',
+    textColorDisabled: '#5a5a5a',
+
+    placeholderColor: '#6a6a6a',
+    placeholderColorDisabled: '#5a5a5a',
+
+    iconColor: '#858585',
+    iconColorHover: '#cccccc',
+    iconColorPressed: '#007acc',
+    iconColorDisabled: '#5a5a5a',
+
+    opacity1: '0.95',
+    opacity2: '0.85',
+    opacity3: '0.55',
+    opacity4: '0.35',
+    opacity5: '0.2',
+
+    dividerColor: '#3c3c3c',
+    borderColor: '#3c3c3c',
+
+    closeIconColor: '#858585',
+    closeIconColorHover: '#cccccc',
+    closeIconColorPressed: '#cccccc',
+    closeColorHover: 'rgba(255, 255, 255, 0.12)',
+    closeColorPressed: 'rgba(255, 255, 255, 0.2)',
+
+    clearColor: '#6a6a6a',
+    clearColorHover: '#969696',
+    clearColorPressed: '#007acc',
+
+    scrollbarColor: 'rgba(121, 121, 121, 0.4)',
+    scrollbarColorHover: 'rgba(100, 100, 100, 0.7)',
+    scrollbarWidth: '6px',
+    scrollbarHeight: '6px',
+    scrollbarBorderRadius: '6px',
+
+    progressRailColor: '#3c3c3c',
+    railColor: '#3c3c3c',
+
+    popoverColor: '#252526',
+    tableColor: '#1e1e1e',
+    cardColor: '#252526',
+    modalColor: '#252526',
+    bodyColor: '#1e1e1e',
+    tagColor: '#264f78',
+    avatarColor: '#3c3c3c',
+    invertedColor: '#cccccc',
+
+    inputColor: '#1e1e1e',
+    codeColor: '#1e1e1e',
+    tabColor: '#2d2d2d',
+    actionColor: '#2d2d2d',
+    tableHeaderColor: '#252526',
+    hoverColor: '#2a2d2e',
+    tableColorHover: 'rgba(60, 60, 60, 0.3)',
+    tableColorStriped: 'rgba(60, 60, 60, 0.2)',
+    pressedColor: '#383838',
+
+    opacityDisabled: '0.5',
+    inputColorDisabled: '#2d2d2d',
+
+    buttonColor2: 'rgba(255, 255, 255, 0.12)',
+    buttonColor2Hover: 'rgba(255, 255, 255, 0.2)',
+    buttonColor2Pressed: 'rgba(255, 255, 255, 0.28)',
+
+    boxShadow1: '0 1px 3px rgba(0, 0, 0, 0.48)',
+    boxShadow2: '0 3px 8px rgba(0, 0, 0, 0.72), 0 1px 4px rgba(0, 0, 0, 0.32)',
+    boxShadow3: '0 8px 24px rgba(0, 0, 0, 0.64)',
+  },
+};

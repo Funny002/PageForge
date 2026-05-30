@@ -27,27 +27,27 @@ export const lightGithub: GlobalThemeOverrides = {
     heightHuge: '48px',
 
     primaryColor: '#1f883d',
-    primaryColorHover: '#1a7f37',
+    primaryColorHover: '#28a745',
     primaryColorPressed: '#156a2e',
     primaryColorSuppl: '#1f883d',
 
     infoColor: '#0969da',
-    infoColorHover: '#0860ca',
+    infoColorHover: '#1a7fdb',
     infoColorPressed: '#0753b3',
     infoColorSuppl: '#0969da',
 
-    successColor: '#1a7f37',
-    successColorHover: '#187733',
-    successColorPressed: '#156a2e',
-    successColorSuppl: '#1a7f37',
+    successColor: '#2da44e',
+    successColorHover: '#3fb950',
+    successColorPressed: '#238636',
+    successColorSuppl: '#2da44e',
 
     warningColor: '#9a6700',
-    warningColorHover: '#8f6100',
+    warningColorHover: '#bf8700',
     warningColorPressed: '#7d5400',
     warningColorSuppl: '#9a6700',
 
     errorColor: '#cf222e',
-    errorColorHover: '#c11f2a',
+    errorColorHover: '#e5534b',
     errorColorPressed: '#a81b24',
     errorColorSuppl: '#cf222e',
 
