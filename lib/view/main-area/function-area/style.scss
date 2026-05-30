@@ -1,0 +1,18 @@
+.fp-func {
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+
+  &__resize {
+    width: 4px;
+    height: 100%;
+    background: transparent;
+    cursor: col-resize;
+    flex-shrink: 0;
+    transition: background 0.15s;
+
+    &:hover {
+      background: var(--pf-accent-color);
+    }
+  }
+}

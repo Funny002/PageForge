@@ -1,0 +1,38 @@
+:root {
+  --pf-header-bg: #24292f;
+  --pf-sidebar-bg: #f6f8fa;
+  --pf-panel-bg: #ffffff;
+  --pf-status-bar-bg: #24292f;
+  --pf-workspace-bg: #ffffff;
+  --pf-card-bg: #f6f8fa;
+  --pf-border-color: #d0d7de;
+  --pf-border-muted: #d8dee4;
+  --pf-text-color: #1f2328;
+  --pf-text-color-muted: #656d76;
+  --pf-accent-color: #0969da;
+  --pf-accent-hover: #0550ae;
+  --pf-danger-color: #cf222e;
+  --pf-success-color: #1a7f37;
+  --pf-warning-color: #9a6700;
+  --pf-icon-color: #656d76;
+  --pf-icon-active-color: #0969da;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fp-root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--pf-workspace-bg);
+  color: var(--pf-text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  user-select: none;
+}

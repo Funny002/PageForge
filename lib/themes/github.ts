@@ -1,0 +1,41 @@
+import type { ThemeColors } from '../core/types'
+
+export const githubLight: ThemeColors = {
+  headerBg: '#24292f',
+  sidebarBg: '#f6f8fa',
+  panelBg: '#ffffff',
+  statusBarBg: '#24292f',
+  workspaceBg: '#ffffff',
+  cardBg: '#f6f8fa',
+  borderColor: '#d0d7de',
+  borderMuted: '#d8dee4',
+  textColor: '#1f2328',
+  textColorMuted: '#656d76',
+  accentColor: '#0969da',
+  accentHover: '#0550ae',
+  dangerColor: '#cf222e',
+  successColor: '#1a7f37',
+  warningColor: '#9a6700',
+  iconColor: '#656d76',
+  iconActiveColor: '#0969da',
+}
+
+export const githubDark: ThemeColors = {
+  headerBg: '#161b22',
+  sidebarBg: '#0d1117',
+  panelBg: '#161b22',
+  statusBarBg: '#161b22',
+  workspaceBg: '#0d1117',
+  cardBg: '#21262d',
+  borderColor: '#30363d',
+  borderMuted: '#21262d',
+  textColor: '#e6edf3',
+  textColorMuted: '#8b949e',
+  accentColor: '#58a6ff',
+  accentHover: '#1f6feb',
+  dangerColor: '#f85149',
+  successColor: '#3fb950',
+  warningColor: '#d29922',
+  iconColor: '#8b949e',
+  iconActiveColor: '#58a6ff',
+}

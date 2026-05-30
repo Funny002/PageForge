@@ -1,0 +1,46 @@
+.fp-ctxmenu {
+  position: fixed;
+  z-index: 10000;
+  min-width: 180px;
+  background: var(--pf-panel-bg);
+  border: 1px solid var(--pf-border-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 4px 0;
+  font-size: 13px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: var(--pf-text-color);
+    gap: 8px;
+
+    &:hover {
+      background: var(--pf-card-bg);
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  &__label {
+    flex: 1;
+  }
+
+  &__shortcut {
+    color: var(--pf-text-color-muted);
+    font-size: 11px;
+    margin-left: 16px;
+  }
+
+  &__divider {
+    height: 1px;
+    background: var(--pf-border-color);
+    margin: 4px 8px;
+  }
+}

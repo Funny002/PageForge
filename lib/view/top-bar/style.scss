@@ -1,0 +1,31 @@
+.fp-topbar {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  flex-shrink: 0;
+  background: var(--pf-header-bg);
+  color: #ffffff;
+  padding: 0 12px;
+  gap: 8px;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__center {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+  }
+}

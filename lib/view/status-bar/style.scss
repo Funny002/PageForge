@@ -1,0 +1,23 @@
+.fp-statusbar {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  flex-shrink: 0;
+  background: var(--pf-status-bar-bg);
+  color: #ffffff;
+  padding: 0 12px;
+  font-size: 12px;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+  }
+}
