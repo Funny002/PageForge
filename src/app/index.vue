@@ -5,12 +5,10 @@
 <script setup lang="ts">
 import { VueDevtools } from 'common-store/vue-devtools';
 import type { Store } from 'common-store';
+import { getCurrentInstance } from 'vue';
 import { Logger } from 'common-store';
 import { pageForge } from '../../lib';
 import type { App } from 'vue';
-import { useThemeVars } from 'naive-ui';
-
-console.log(useThemeVars());
 
 const app = getCurrentInstance()?.appContext.app as App;
 

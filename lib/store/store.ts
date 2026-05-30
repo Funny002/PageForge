@@ -7,6 +7,10 @@ function createState() {
       width: 1920,
       height: 1080,
     },
+    menu: {
+      width: 200,
+      isTxt: false,
+    },
   };
 }
 
