@@ -36,7 +36,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ['vue', 'naive-ui', 'pinia', 'common-store'],
+      external: ['vue', 'naive-ui', 'common-store'],
     },
   },
 });
