@@ -8,6 +8,9 @@ import type { Store } from 'common-store';
 import { Logger } from 'common-store';
 import { pageForge } from '../../lib';
 import type { App } from 'vue';
+import { useThemeVars } from 'naive-ui';
+
+console.log(useThemeVars());
 
 const app = getCurrentInstance()?.appContext.app as App;
 
