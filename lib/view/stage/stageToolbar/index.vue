@@ -1,57 +1,51 @@
 <template>
   <div ref="toolbarRef" class="pf-stage-toolbar" :style="{ left: x + 'px', top: y + 'px' }" :class="{ 'is-dragging': dragging }">
     <div class="pf-toolbar-handle" @pointerdown.prevent="onDragStart">
-      <span class="pf-toolbar-dot" v-for="i in 6" :key="i" />
+      <n-icon :size="18">
+        <Draggable />
+      </n-icon>
     </div>
     <div class="pf-toolbar-sep" />
     <div class="pf-toolbar-group">
-      <button class="pf-toolbar-btn" :class="{ 'is-active': tool === 'select' }" title="选择" @click="emit('change', 'tool', 'select')">
-        <NIcon size="18">
-          <MoveOutline />
-        </NIcon>
-      </button>
-      <button class="pf-toolbar-btn" :class="{ 'is-active': tool === 'hand' }" title="拖拽" @click="emit('change', 'tool', 'hand')">
-        <NIcon size="18">
-          <HandLeftOutline />
-        </NIcon>
-      </button>
+      <NButton size="small" :type="tool === 'select' ? 'primary' : 'tertiary'" title="选择" @click="store.actions.dispatch('stage.setTool', 'select')">
+        <template #icon>
+          <Cursor1 />
+        </template>
+      </NButton>
+      <NButton size="small" :type="tool === 'hand' ? 'primary' : 'tertiary'" title="拖拽" @click="store.actions.dispatch('stage.setTool', 'hand')">
+        <template #icon>
+          <Move />
+        </template>
+      </NButton>
     </div>
     <div class="pf-toolbar-sep" />
     <div class="pf-toolbar-group pf-toolbar-zoom">
-      <button class="pf-toolbar-btn pf-toolbar-zoom-btn" title="缩小" @click="zoomOut">
-        <NIcon size="16">
-          <RemoveOutline />
-        </NIcon>
-      </button>
+      <NButton size="tiny" tertiary title="缩小" @click="zoomOut">
+        <template #icon>
+          <Subtract />
+        </template>
+      </NButton>
       <input type="range" class="pf-toolbar-slider" :min="0.1" :max="5" :step="0.1" :value="scale" @input="onScaleInput" />
-      <button class="pf-toolbar-btn pf-toolbar-zoom-btn" title="放大" @click="zoomIn">
-        <NIcon size="16">
-          <AddOutline />
-        </NIcon>
-      </button>
+      <NButton size="tiny" tertiary title="放大" @click="zoomIn">
+        <template #icon>
+          <Add />
+        </template>
+      </NButton>
       <span class="pf-toolbar-zoom-label" title="重置缩放" @click="resetScale">{{ Math.round(scale * 100) }}%</span>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue';
-import { NIcon } from 'naive-ui';
-import { MoveOutline, HandLeftOutline, AddOutline, RemoveOutline } from '@vicons/ionicons5';
+defineOptions({ name: 'PageForgeStageToolbar' });
+import { Cursor1, Draggable, Add, Subtract, Move } from '@vicons/carbon';
+import { useStoreState, usePageStore } from '../../../core';
 import type { ToolType } from '../../../core';
 
-defineOptions({ name: 'PageForgeStageToolbar' });
+const store = usePageStore();
 
-interface Props {
-  tool: ToolType;
-  scale: number;
-}
-
-const props = defineProps<Props>();
-
-const emit = defineEmits<{
-  change: [type: 'tool' | 'scale', value: any]
-}>();
+const tool = useStoreState<ToolType>('tool', 'select');
+const scale = useStoreState<number>('scale', 1);
 
 const x = ref(0);
 const y = ref(0);
@@ -110,30 +104,30 @@ function onDragEnd(_e: PointerEvent) {
 
 function onScaleInput(e: Event) {
   const target = e.target as HTMLInputElement;
-  emit('change', 'scale', parseFloat(target.value));
+  store.actions.dispatch('stage.setScale', parseFloat(target.value));
 }
 
 function zoomIn() {
-  emit('change', 'scale', Math.min(5, props.scale + 0.1));
+  store.actions.dispatch('stage.setScale', Math.min(5, scale.value + 0.1));
 }
 
 function zoomOut() {
-  emit('change', 'scale', Math.max(0.1, props.scale - 0.1))
+  store.actions.dispatch('stage.setScale', Math.max(0.1, scale.value - 0.1));
 }
 
 function resetScale() {
-  emit('change', 'scale', 1)
+  store.actions.dispatch('stage.setScale', 1);
 }
 
 onMounted(() => {
   initPosition();
-  addEventListener('pointermove', onDragMove);
-  addEventListener('pointerup', onDragEnd);
+  document.addEventListener('pointermove', onDragMove);
+  document.addEventListener('pointerup', onDragEnd);
 });
 
 onUnmounted(() => {
-  removeEventListener('pointermove', onDragMove);
-  removeEventListener('pointerup', onDragEnd);
+  document.removeEventListener('pointermove', onDragMove);
+  document.removeEventListener('pointerup', onDragEnd);
 });
 </script>
 

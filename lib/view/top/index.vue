@@ -27,34 +27,23 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject } from 'vue';
-import { PAGE_STORE_KEY } from '../../core';
-import type { PageState } from '../../core';
-import type { Store } from 'common-store';
+import { useStoreState, usePageStore } from '../../core';
 
 defineOptions({ name: 'PageForgeTopBar' });
 
-const store = inject<Store>(PAGE_STORE_KEY);
+const store = usePageStore();
 
-function getState(): PageState | undefined {
-  if (!store) return undefined;
-  return store.data.get() as PageState;
-}
-
-const canvasWidth = computed(() => getState()?.canvasWidth ?? 1920);
-
-const canvasHeight = computed(() => getState()?.canvasHeight ?? 1080);
+const canvasWidth = useStoreState<number>('canvasWidth', 1920);
+const canvasHeight = useStoreState<number>('canvasHeight', 1080);
 
 function onWidthChange(val: number | null) {
   if (val == null) return;
-  const state = getState();
-  store?.actions.dispatch('canvas.resize', val, state?.canvasHeight ?? 1080);
+  store.actions.dispatch('canvas.resize', val, canvasHeight.value);
 }
 
 function onHeightChange(val: number | null) {
   if (val == null) return;
-  const state = getState();
-  store?.actions.dispatch('canvas.resize', state?.canvasWidth ?? 1920, val);
+  store.actions.dispatch('canvas.resize', canvasWidth.value, val);
 }
 </script>
 

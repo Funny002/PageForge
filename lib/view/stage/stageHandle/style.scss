@@ -1,0 +1,30 @@
+.pf-stage-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border: 2px solid var(--pf-accent);
+  border-radius: 1px;
+  z-index: 101;
+  pointer-events: auto;
+
+  &.is-n,
+  &.is-s {
+    cursor: ns-resize;
+  }
+
+  &.is-e,
+  &.is-w {
+    cursor: ew-resize;
+  }
+
+  &.is-nw,
+  &.is-se {
+    cursor: nwse-resize;
+  }
+
+  &.is-ne,
+  &.is-sw {
+    cursor: nesw-resize;
+  }
+}

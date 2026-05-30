@@ -1,9 +1,11 @@
 <template>
-  <PageForest />
+  <PageForge />
 </template>
 
-<script lang="ts" setup>
-import { PageForest } from '../../lib';
+<script setup lang="ts">
+import { PageForge } from '../../lib';
+
+defineOptions({ name: 'PageForgeApp' });
 </script>
 
 <style lang="scss" src="./style.scss"></style>

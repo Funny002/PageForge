@@ -1,13 +1,12 @@
 <template>
-  <div class="pf-stage-canvas" :class="{'is-ruler': isRuler}">
-    <template v-if="isRuler">
+  <div class="pf-stage-canvas" :class="{'is-ruler': showRuler}">
+    <template v-if="showRuler">
       <div class="pf-stage-ruler-corner" />
-      <PageForgeStageRuler direction="vertical" :scale="data.scale" :offset="data.offsetY" :start="data.start" />
-      <PageForgeStageRuler direction="horizontal" :scale="data.scale" :offset="data.offsetX" :start="data.start" />
+      <PageForgeStageRuler direction="vertical" :scale="scale" :offset="viewportY" :start="0" />
+      <PageForgeStageRuler direction="horizontal" :scale="scale" :offset="viewportX" :start="0" />
     </template>
-    <PageForgeStageToolbar :tool="data.tool" :scale="data.scale" @change="onToolbarChange" />
+    <PageForgeStageToolbar />
     <div class="pf-stage-content">
-      {{JSON.stringify(data)}}
       <slot />
     </div>
   </div>
@@ -15,24 +14,15 @@
 
 <script setup lang="ts">
 defineOptions({ name: 'PageForgeStageCanvas' });
-
-import { reactive } from 'vue';
-import PageForgeStageRuler from '../stageRuler/index.vue';
 import PageForgeStageToolbar from '../stageToolbar/index.vue';
+import PageForgeStageRuler from '../stageRuler/index.vue';
+import { useStoreState } from '../../../core';
 
-const isRuler = true;
+const showRuler = useStoreState<boolean>('showRuler', true);
 
-const data = reactive<Record<string, any>>({
-  scale: 1,
-  offsetX: 0,
-  offsetY: 0,
-  start: -100,
-  tool: 'select', // 'select' | 'hand' | 'move'
-});
-
-function onToolbarChange(type: 'tool' | 'scale', value: any) {
-  data[type] = value;
-}
+const scale = useStoreState<number>('scale', 1);
+const viewportX = useStoreState<number>('viewportX', 0);
+const viewportY = useStoreState<number>('viewportY', 0);
 </script>
 
-<style lang="scss" scoped src="./style.scss"></style>
+<style lang="scss" src="./style.scss"></style>

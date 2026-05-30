@@ -3,18 +3,18 @@
   left: 0;
   z-index: 2;
   position: absolute;
-  width: calc(100% - var(--ruler-corner, 26px));
-  height: calc(100% - var(--ruler-corner, 26px));
+  width: calc(100% - var(--pf-ruler-corner, 26px));
+  height: calc(100% - var(--pf-ruler-corner, 26px));
 
   &.is-horizontal {
-    left: var(--ruler-corner, 26px);
-    height: var(--ruler-corner, 26px);
+    left: var(--pf-ruler-corner, 26px);
+    height: var(--pf-ruler-corner, 26px);
     border-bottom: 1px solid var(--pf-border);
   }
 
   &.is-vertical {
-    top: var(--ruler-corner, 26px);
-    width: var(--ruler-corner, 26px);
+    top: var(--pf-ruler-corner, 26px);
+    width: var(--pf-ruler-corner, 26px);
     border-right: 1px solid var(--pf-border);
   }
 }

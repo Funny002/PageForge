@@ -3,9 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from 'vue';
-
-defineOptions({ name: 'PageForgeRuler' });
+defineOptions({ name: 'PageForgeStageRuler' });
 
 interface Props {
   scale: number;

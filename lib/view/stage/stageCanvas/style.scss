@@ -1,14 +1,14 @@
 .pf-stage-canvas {
   width: 100%;
   height: 100%;
-  flex: 1 1 auto;
   overflow: hidden;
   position: relative;
+  flex: 1 1 auto !important;
 
   &.is-ruler {
-    --ruler-corner: 26px;
-    padding-top: var(--ruler-corner);
-    padding-left: var(--ruler-corner);
+    --pf-ruler-corner: 26px;
+    padding-top: var(--pf-ruler-corner);
+    padding-left: var(--pf-ruler-corner);
   }
 }
 
@@ -17,8 +17,8 @@
   left: 0;
   z-index: 1;
   position: absolute;
-  width: var(--ruler-corner);
-  height: var(--ruler-corner);
+  width: var(--pf-ruler-corner);
+  height: var(--pf-ruler-corner);
   background: var(--pf-bg-secondary);
   border-right: 1px solid var(--pf-border);
   border-bottom: 1px solid var(--pf-border);
@@ -28,4 +28,5 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: var(--pf-bg-canvas);
 }

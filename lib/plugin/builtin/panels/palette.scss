@@ -1,0 +1,24 @@
+.pf-comp-palette {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pf-comp-item {
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid var(--pf-border);
+  background: var(--pf-bg-primary);
+  transition: background 0.15s;
+
+  &:hover {
+    background: var(--pf-bg-tertiary);
+  }
+}
+
+.pf-comp-label {
+  font-size: 13px;
+  color: var(--pf-text-primary);
+}

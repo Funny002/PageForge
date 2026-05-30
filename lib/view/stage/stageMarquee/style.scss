@@ -1,0 +1,7 @@
+.pf-stage-marquee {
+  position: absolute;
+  border: 1px dashed var(--pf-accent);
+  background: rgba(9, 105, 218, 0.08);
+  pointer-events: none;
+  z-index: 100;
+}

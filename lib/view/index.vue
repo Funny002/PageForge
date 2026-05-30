@@ -11,10 +11,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, useTemplateRef, watch, provide, getCurrentInstance } from 'vue';
 import type { App } from 'vue';
 
-defineOptions({ name: 'PageForest' });
+defineOptions({ name: 'PageForgeLayout' });
 
 import PageForgeTop from './top/index.vue';
 import PageForgeLeft from './left/index.vue';
@@ -30,8 +29,6 @@ import { createPageStore, PAGE_STORE_KEY } from '../core';
 const app = getCurrentInstance()?.appContext.app as App;
 const pageStore = createPageStore(app);
 provide(PAGE_STORE_KEY, pageStore);
-
-pageStore.actions.dispatch('canvas.resize', 800, 1080);
 
 interface Props {
   theme?: ThemeConfig;
@@ -51,4 +48,4 @@ onMounted(doApplyTheme);
 watch(() => props.theme, doApplyTheme);
 </script>
 
-<style lang="scss" src="./style.scss"></style>
+<style lang="scss" scoped src="./style.scss"></style>

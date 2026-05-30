@@ -1,14 +1,22 @@
-import pageForest from './view/index.vue';
 import type { App } from 'vue';
 
-const PageForest = pageForest as typeof pageForest & { install: (app: App) => void };
+import pageForgeLayout from './view/index.vue';
+import { registerPlugin } from './plugin';
+import { builtinPlugins } from './plugin/builtin';
 
-PageForest.install = (app: App) => {
-  app.component('PageForest', PageForest);
+const PageForge = pageForgeLayout as typeof pageForgeLayout & { install: (app: App) => void };
+
+PageForge.install = (app: App) => {
+  app.component('PageForge', PageForge);
 };
 
-export { PageForest };
-export default PageForest;
+builtinPlugins.forEach((p) => registerPlugin(p));
 
-// 导出主题
+export { PageForge };
+export default PageForge;
+
 export { githubLight, githubDark } from './theme';
+export { registerPlugin, usePlugin } from './plugin';
+export type { PageForgePlugin, NodeTypeConfig } from './plugin';
+export { createPageStore, usePageStore, useStoreState, PAGE_STORE_KEY } from './core';
+export type { PageState, PageNode, GridConfig, GridType, ToolType } from './core';
