@@ -1,4 +1,4 @@
-import type { GlobalThemeOverrides } from 'naive-ui'
+import type { GlobalThemeOverrides } from 'naive-ui';
 
 export const lightGithub: GlobalThemeOverrides = {
   common: {

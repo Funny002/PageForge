@@ -10,8 +10,24 @@ const canvasRef = useTemplateRef('canvasRef');
 
 const INTERVALS = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000];
 
-function getColor(el: HTMLElement, varName: string): string {
-  return getComputedStyle(el).getPropertyValue(varName).trim();
+let cachedColors: { card: string; divider: string; text: string } | null = null;
+let cachedColorsElement: HTMLElement | null = null;
+
+function updateColors(el: HTMLElement) {
+  const style = getComputedStyle(el);
+  cachedColors = {
+    card: style.getPropertyValue('--card-color').trim(),
+    divider: style.getPropertyValue('--divider-color').trim(),
+    text: style.getPropertyValue('--text-color-3').trim(),
+  };
+  cachedColorsElement = el;
+}
+
+function getColors(el: HTMLElement) {
+  if (cachedColorsElement !== el || !cachedColors) {
+    updateColors(el);
+  }
+  return cachedColors!;
 }
 
 function draw() {
@@ -36,9 +52,7 @@ function draw() {
   const scaleFactor = props.scale / 100;
   const offset = props.offset;
 
-  const cardColor = getColor(canvas, '--card-color');
-  const dividerColor = getColor(canvas, '--divider-color');
-  const textColor = getColor(canvas, '--text-color-3');
+  const { card: cardColor, divider: dividerColor, text: textColor } = getColors(canvas);
 
   ctx.fillStyle = cardColor;
   ctx.fillRect(0, 0, w, h);

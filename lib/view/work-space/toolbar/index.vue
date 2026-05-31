@@ -38,7 +38,7 @@ const toolbarRef = useTemplateRef('toolbarRef');
 
 const props = defineProps<{ type: string, scale: number }>();
 
-const emits = defineEmits<{ 'update:scale': [value: number], 'update:tool': [value: string]; 'resize': any }>();
+const emits = defineEmits<{ 'update:scale': [value: number], 'update:tool': [value: string]; 'resize': [] }>();
 const onHandleClick = () => emits('resize');
 
 const pos = reactive({ left: 200, bottom: 16 });

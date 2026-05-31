@@ -26,7 +26,7 @@ const store = injectStore();
 const canvasWidth = useStore('canvas.width', 1920);
 const canvasHeight = useStore('canvas.height', 1080);
 
-function handleResize(type: 'width' | 'height', value: any) {
+function handleResize(type: 'width' | 'height', value: number | null) {
   const size = { width: canvasWidth, height: canvasHeight, [type]: value };
   store.actions.dispatch('canvas.resize', toValue(size.width), toValue(size.height));
 }
