@@ -14,4 +14,6 @@
   left: 0;
   position: absolute;
   transform-origin: top left;
+  background: var(--card-color);
+  box-shadow: var(--box-shadow-2);
 }

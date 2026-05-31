@@ -6,9 +6,13 @@
   width: 60px;
   height: 100%;
   flex-shrink: 0;
+  background: var(--card-color);
+  border-right: 1px solid var(--divider-color);
 }
 
 .fp-sidePanel_panel {
   height: 100%;
   flex-shrink: 0;
+  background: var(--card-color);
+  border-right: 1px solid var(--divider-color);
 }

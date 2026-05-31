@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
+.opencode
 components.d.ts
 auto-imports.d.ts

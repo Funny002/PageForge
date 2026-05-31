@@ -95,7 +95,7 @@ export const lightGithub: GlobalThemeOverrides = {
 
     popoverColor: '#ffffff',
     tableColor: '#ffffff',
-    cardColor: '#ffffff',
+    cardColor: '#f6f8fa',
     modalColor: '#ffffff',
     bodyColor: '#ffffff',
     tagColor: '#ddf4ff',

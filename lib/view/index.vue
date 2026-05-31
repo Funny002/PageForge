@@ -1,12 +1,12 @@
 <template>
-  <n-config-provider class="fp-provider" :theme-overrides="props.theme">
-    <TopBar :style="{ background: props.theme.common?.bodyColor, borderBottom: `1px solid ${props.theme.common?.dividerColor}` }" />
+  <n-config-provider class="fp-provider" :theme-overrides="props.theme" :style="themeStyle">
+    <TopBar />
     <div class="fp-container">
-      <SidePanel :style="{ background: props.theme.common?.cardColor, borderRight: `1px solid ${props.theme.common?.dividerColor}` }" />
-      <WorkSpace :style="{ background: props.theme.common?.inputColor }" />
-      <AttrPanel :style="{ background: props.theme.common?.cardColor, borderLeft: `1px solid ${props.theme.common?.dividerColor}` }" />
+      <SidePanel />
+      <WorkSpace />
+      <AttrPanel />
     </div>
-    <StatusBar :style="{ background: props.theme.common?.bodyColor, borderTop: `1px solid ${props.theme.common?.dividerColor}` }" />
+    <StatusBar />
   </n-config-provider>
 </template>
 
@@ -29,6 +29,31 @@ const props = withDefaults(defineProps<{
   theme?: GlobalThemeOverrides
 }>(), {
   theme: () => lightVscode,
+});
+
+const themeStyle = computed(() => {
+  const t = props.theme?.common || {};
+  return {
+    '--primary-color': t.primaryColor,
+    '--body-color': t.bodyColor,
+    '--card-color': t.cardColor,
+    '--text-color-1': t.textColor1,
+    '--text-color-2': t.textColor2,
+    '--text-color-3': t.textColor3,
+    '--divider-color': t.dividerColor,
+    '--border-color': t.borderColor,
+    '--hover-color': t.hoverColor,
+    '--pressed-color': t.pressedColor,
+    '--scrollbar-color': t.scrollbarColor,
+    '--input-color': t.inputColor,
+    '--success-color': t.successColor,
+    '--warning-color': t.warningColor,
+    '--error-color': t.errorColor,
+    '--info-color': t.infoColor,
+    '--box-shadow-1': t.boxShadow1,
+    '--box-shadow-2': t.boxShadow2,
+    '--box-shadow-3': t.boxShadow3,
+  };
 });
 
 const emits = defineEmits<{

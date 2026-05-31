@@ -10,14 +10,12 @@
 
 <script setup lang="ts">
 import { usePointerMove } from '../../hooks';
-import { useThemeVars } from 'naive-ui';
 import { useStore } from '../../store';
 
 defineOptions({ name: 'WorkSpace' });
 
 const canvasSize = useStore('canvas', { width: 1920, height: 1080 });
 const data = reactive({ viewX: 0, viewY: 0, scale: 100 });
-const theme = useThemeVars();
 
 const surfaceStyle = computed(() => {
   const { width, height } = toValue(canvasSize);
@@ -25,7 +23,6 @@ const surfaceStyle = computed(() => {
   return {
     width: `${width}px`,
     height: `${height}px`,
-    background: theme.value.cardColor,
     transform: `translate(${viewX}px, ${viewY}px) scale(${scale / 100})`,
   };
 });
