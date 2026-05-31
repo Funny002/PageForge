@@ -1,11 +1,22 @@
 <template>
   <div class="fp-topBar">
-    <n-input-number :min="100" :max="9999" size="small" :show-button="false" :value="canvasWidth" @update:value="v => handleResize('width', v)" />
-    <n-input-number :min="100" :max="9999" size="small" :show-button="false" :value="canvasHeight" @update:value="v => handleResize('height', v)" />
+    <div class="fp-topBar-item">
+      <n-icon :size="20">
+        <FitToWidth />
+      </n-icon>
+      <n-input-number :min="100" :max="9999" size="small" :show-button="false" :value="canvasWidth" @update:value="v => handleResize('width', v)" />
+    </div>
+    <div class="fp-topBar-item">
+      <n-icon :size="20">
+        <FitToHeight />
+      </n-icon>
+      <n-input-number :min="100" :max="9999" size="small" :show-button="false" :value="canvasHeight" @update:value="v => handleResize('height', v)" />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { FitToWidth, FitToHeight } from '@vicons/carbon';
 import { injectStore, useStore } from '../../store';
 
 defineOptions({ name: 'TopBar' });

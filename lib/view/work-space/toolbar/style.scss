@@ -1,0 +1,56 @@
+.fp-workSpace-toolbar {
+  left: 100px;
+  bottom: 16px;
+  z-index: 10;
+  position: absolute;
+
+  gap: 6px;
+  display: flex;
+  padding: 4px 8px;
+  border-radius: 4px;
+  align-items: center;
+
+  background: var(--card-color);
+  box-shadow: var(--box-shadow-2);
+  border: 1px solid var(--divider-color);
+}
+
+.fp-workSpace-toolbar-grip {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: grab;
+  border-radius: 3px;
+  color: var(--text-color-3);
+
+  &:active {
+    cursor: grabbing;
+    background: var(--hover-color);
+  }
+}
+
+.fp-workSpace-toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--divider-color);
+  flex-shrink: 0;
+}
+
+.fp-workSpace-toolbar-zoom {
+  gap: 4px;
+  display: flex;
+  align-items: center;
+
+  .n-radio__label {
+    height: 100%;
+  }
+}
+
+.fp-workSpace-toolbar-zoom-label {
+  font-size: 12px;
+  min-width: 34px;
+  text-align: right;
+  color: var(--text-color-2);
+}

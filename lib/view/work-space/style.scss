@@ -3,10 +3,12 @@
 }
 
 .fp-workSpace-container {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 0;
+  bottom: 0;
   overflow: hidden;
-  position: relative;
 }
 
 .fp-workSpace-body {
@@ -16,4 +18,16 @@
   transform-origin: top left;
   background: var(--card-color);
   box-shadow: var(--box-shadow-2);
+}
+
+.fp-workSpace-ruler-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+  background: var(--card-color);
+  border-right: 1px solid var(--divider-color);
+  border-bottom: 1px solid var(--divider-color);
 }

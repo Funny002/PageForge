@@ -1,21 +1,27 @@
 <template>
-  <div class="fp-workSpace" @pointerdown="onPointerDown">
-    <div class="fp-workSpace-container">
+  <div class="fp-workSpace">
+    <div class="fp-workSpace-ruler-corner" />
+    <WorkSpaceRuler direction="vertical" :scale="data.scale" :offset="data.viewY" />
+    <WorkSpaceRuler direction="horizontal" :scale="data.scale" :offset="data.viewX" />
+    <div class="fp-workSpace-container" @pointerdown="onPointerDown">
       <div class="fp-workSpace-body" ref="surfaceRef" :style="surfaceStyle">
         {{ data }}
       </div>
     </div>
+    <WorkSpaceToolBar :type="data.tool" :scale="data.scale" @update:tool="data.tool = $event" @update:scale="data.scale = $event" @resize="onViewResize" />
   </div>
 </template>
 
 <script setup lang="ts">
+import WorkSpaceToolBar from './toolbar/index.vue';
+import WorkSpaceRuler from './ruler/index.vue';
 import { usePointerMove } from '../../hooks';
 import { useStore } from '../../store';
 
 defineOptions({ name: 'WorkSpace' });
 
 const canvasSize = useStore('canvas', { width: 1920, height: 1080 });
-const data = reactive({ viewX: 0, viewY: 0, scale: 100 });
+const data = reactive({ tool: 'move', viewX: 0, viewY: 0, scale: 100 });
 
 const surfaceStyle = computed(() => {
   const { width, height } = toValue(canvasSize);
@@ -28,6 +34,7 @@ const surfaceStyle = computed(() => {
 });
 
 const onPointerDown = (e: PointerEvent) => {
+  if (data.tool !== 'move') return;
   const { viewX, viewY } = data;
   usePointerMove((moveX, moveY) => {
     data.viewX = Math.floor(viewX + moveX);
